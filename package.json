@@ -1,5 +1,5 @@
 {
-  "name": "healthchecks",
+  "name": "@swingdev/healthchecks",
   "version": "0.1.0",
   "description": "Common application health checks for Node.js",
   "main": "index.js",
