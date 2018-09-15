@@ -6,6 +6,11 @@
   "repository": "git@github.com:SwingDev/healthchecks.git",
   "author": "Swing Development",
   "license": "MIT",
-  "private": false
+  "private": false,
+  "dependencies": {
+    "bluebird": "^3.5.2"
+  },
+  "devDependencies": {
+    "@types/bluebird": "^3.5.24"
+  }
 }
-
