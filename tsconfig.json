@@ -8,6 +8,7 @@
     // Compiler output specification
     "target": "es6",
     "module": "commonjs",
-    "outDir": "dist"
+    "outDir": "dist",
+    "declaration": true
   }
 }
