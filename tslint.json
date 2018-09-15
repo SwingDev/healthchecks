@@ -1,0 +1,8 @@
+{
+  "extends": "tslint-config-standard",
+  "rules": {
+    "no-default-export": true,
+    "no-floating-promises": true,
+    "no-console": true
+  }
+}

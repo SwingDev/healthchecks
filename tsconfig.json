@@ -1,6 +1,13 @@
 {
   "compilerOptions": {
+    // Compiler checks
+    "alwaysStrict": true,
+    "strictNullChecks": true,
+    "noUnusedLocals": true,
+    // Compiler output specification
     "target": "es6",
-    "module": "commonjs"
+    "module": "commonjs",
+    // Project config
+    "baseUrl": "src"
   }
 }
