@@ -8,7 +8,7 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "lint": "tslint --project tsconfig.json",
+    "lint": "tsc --noEmit && tslint --project tsconfig.json",
     "test": "jest"
   },
   "dependencies": {
