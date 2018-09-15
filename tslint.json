@@ -3,6 +3,7 @@
   "rules": {
     "no-default-export": true,
     "no-floating-promises": true,
+    "no-unused-expression": true,
     "no-console": true
   }
 }
