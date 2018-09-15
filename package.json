@@ -4,7 +4,7 @@
   "description": "Common application health checks for Node.js",
   "main": "index.js",
   "repository": "git@github.com:SwingDev/healthchecks.git",
-  "author": "Swing Development",
+  "author": "Swing Development sp. z o. o.",
   "license": "MIT",
   "private": false,
   "scripts": {
