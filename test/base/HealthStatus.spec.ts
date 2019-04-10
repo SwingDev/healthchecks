@@ -1,4 +1,4 @@
-import { HealthStatus } from '../../src'
+import { HealthStatus } from '../../src/base/HealthStatus'
 
 describe('HealthStatus', () => {
   describe('up', () => {
