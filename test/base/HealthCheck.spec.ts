@@ -4,7 +4,7 @@ import { HealthStatus } from '../../src/base/HealthStatus'
 describe('HealthCheck', () => {
   describe('check', () => {
     it('should forward doCheck return value', async () => {
-      const healthStatus = HealthStatus.up('I am healthy!')
+      const healthStatus: HealthStatus = HealthStatus.UP('I am healthy!')
       class DummyHealthCheck extends HealthCheck {
         protected async doCheck (): Promise<HealthStatus> {
           return healthStatus

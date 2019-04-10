@@ -1,28 +1,28 @@
 import { HealthStatus } from '../../src/base/HealthStatus'
 
 describe('HealthStatus', () => {
-  describe('up', () => {
-    test('should return a HealthStatus instance that is healthy', () => {
-      const healthStatus = HealthStatus.up()
+  describe('UP', () => {
+    it('should return a HealthStatus instance that is healthy', () => {
+      const healthStatus: HealthStatus = HealthStatus.UP()
       expect(healthStatus.healthy).toBe(true)
     })
 
-    test('should accept a parameter that is passed to health status details', () => {
-      const additionalDetails = 'An exceptional example of good health'
-      const healthStatus = HealthStatus.up(additionalDetails)
+    it('should accept a parameter that is passed to health status details', () => {
+      const additionalDetails: string = 'An exceptional example of good health'
+      const healthStatus: HealthStatus = HealthStatus.UP(additionalDetails)
       expect(healthStatus.details).toBe(additionalDetails)
     })
   })
 
-  describe('down', () => {
-    test('should return a HealthStatus instance that is not healthy', () => {
-      const healthStatus = HealthStatus.down('Something really bad happened')
+  describe('DOWN', () => {
+    it('should return a HealthStatus instance that is not healthy', () => {
+      const healthStatus: HealthStatus = HealthStatus.DOWN('Something really bad happened')
       expect(healthStatus.healthy).toBe(false)
     })
 
-    test('should accept a parameter that is passed to health status details', () => {
-      const error = new Error('Something bad happened')
-      const healthStatus = HealthStatus.down(error)
+    it('should accept a parameter that is passed to health status details', () => {
+      const error: Error = new Error('Something bad happened')
+      const healthStatus: HealthStatus = HealthStatus.DOWN(error)
       expect(healthStatus.details).toBe(error)
     })
   })

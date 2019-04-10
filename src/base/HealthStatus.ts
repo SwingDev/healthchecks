@@ -1,14 +1,16 @@
+export type HealthStatusDetails = Error | string | object
+
 export class HealthStatus {
-  static up (details?: any): HealthStatus {
+  constructor (
+    public readonly healthy: boolean,
+    public readonly details?: HealthStatusDetails
+  ) { }
+
+  public static UP(details?: HealthStatusDetails): HealthStatus {
     return new HealthStatus(true, details)
   }
 
-  static down (details: any): HealthStatus {
+  public static DOWN(details: HealthStatusDetails): HealthStatus {
     return new HealthStatus(false, details)
   }
-
-  constructor (
-    public readonly healthy: boolean,
-    public readonly details?: any
-  ) { }
 }
