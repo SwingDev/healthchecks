@@ -1,0 +1,23 @@
+version: 2
+
+CI_IMAGE: &CI_IMAGE circleci/node
+
+jobs:
+  lint:
+    docker: *CI_IMAGE
+    steps:
+      - checkout
+      - run: yarn install
+      - run: yarn lint
+  test:
+    steps:
+      - checkout
+      - run: yarn install
+      - run: yarn test
+
+workflows:
+  version: 2
+  pipeline:
+    jobs:
+      - lint
+      - test
