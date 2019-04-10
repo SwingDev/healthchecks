@@ -3,21 +3,42 @@ version: 2
 CI_IMAGE: &CI_IMAGE circleci/node
 
 jobs:
-  lint:
+  install-dependencies:
     docker: *CI_IMAGE
     steps:
       - checkout
       - run: yarn install
-      - run: yarn lint
-  test:
+      - save_cache:
+          key: node-modules-cache-v1-{{ checksum 'yarn.lock' }}
+          paths:
+            - node_modules
+
+  lint:
+    docker: *CI_IMAGE
     steps:
       - checkout
-      - run: yarn install
+      - restore_cache:
+          keys:
+            - node-modules-cache-v1-{{ checksum 'yarn.lock' }}
+      - run: yarn lint
+
+  test:
+    docker: *CI_IMAGE
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - node-modules-cache-v1-{{ checksum 'yarn.lock' }}
       - run: yarn test
 
 workflows:
   version: 2
   pipeline:
     jobs:
-      - lint
-      - test
+      - install-dependencies
+      - lint:
+          requires:
+            - install-dependencies
+      - test:
+          requires:
+            - install-dependencies
