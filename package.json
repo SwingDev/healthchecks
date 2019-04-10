@@ -11,7 +11,7 @@
   "scripts": {
     "prepublishOnly": "tsc --project tsconfig.publish.json",
     "lint": "tsc --noEmit && tslint --project tsconfig.json",
-    "test": "jest"
+    "test": "TS_NODE_TRANSPILE_ONLY='true' jest"
   },
   "dependencies": {
     "typescript": "^3.0.3"
