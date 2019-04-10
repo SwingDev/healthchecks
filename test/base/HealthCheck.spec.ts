@@ -6,7 +6,7 @@ describe('HealthCheck', () => {
     it('should forward doCheck return value', async () => {
       const healthStatus: HealthStatus = HealthStatus.UP('I am healthy!')
       class HealthyHealthCheck extends HealthCheck {
-        protected async doCheck (): Promise<HealthStatus> {
+        protected async doCheck(): Promise<HealthStatus> {
           return healthStatus
         }
       }
