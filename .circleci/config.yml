@@ -1,6 +1,6 @@
 version: 2
 
-CI_IMAGE: &CI_IMAGE circleci/node
+CI_IMAGE: &CI_IMAGE circleci/node:lts
 
 jobs:
   install-dependencies:
