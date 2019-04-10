@@ -12,7 +12,8 @@
     "prepublishOnly": "tsc --project tsconfig.publish.json",
     "format": "prettier --write '{src,test}/**/*.ts'",
     "lint": "tsc --noEmit && tslint --project tsconfig.json",
-    "test": "TS_NODE_TRANSPILE_ONLY='true' jest"
+    "test": "TS_NODE_TRANSPILE_ONLY='true' jest",
+    "test:coverage": "TS_NODE_TRANSPILE_ONLY='true' jest --coverage"
   },
   "dependencies": {
     "typescript": "^3.0.3"
